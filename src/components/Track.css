@@ -1,0 +1,150 @@
+/* 轨道组件 */
+.track {
+  position: relative;
+  border-bottom: 1px solid #404040;
+  background: #252525;
+  transition: background-color 0.2s;
+  min-height: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.track.mobile {
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+}
+
+.track:hover,
+.track.mobile:active {
+  background: #2a2a2a;
+}
+
+.track-video {
+  background: linear-gradient(90deg, #2a1a1a 0%, #252525 8%);
+}
+
+.track-audio {
+  background: linear-gradient(90deg, #1a2a1a 0%, #252525 8%);
+}
+
+.track-text {
+  background: linear-gradient(90deg, #1a1a2a 0%, #252525 8%);
+}
+
+.track-effects {
+  background: linear-gradient(90deg, #2a1a2a 0%, #252525 8%);
+}
+
+.track.locked {
+  background: #1a1a1a;
+  opacity: 0.7;
+}
+
+.track.muted {
+  opacity: 0.5;
+}
+
+/* 轨道头部 */
+.track-header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  background: rgba(45, 45, 45, 0.9);
+  border-right: 1px solid #404040;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.track-header.mobile {
+  width: 100px;
+  padding: 0 6px;
+  backdrop-filter: blur(4px);
+}
+
+.track-icon {
+  font-size: 14px;
+  margin-right: 6px;
+}
+
+.track-icon.mobile {
+  font-size: 16px;
+  margin-right: 4px;
+}
+
+.track-name {
+  font-size: 11px;
+  color: #cccccc;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-name.mobile {
+  font-size: 10px;
+}
+
+.track-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.track-status {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.track-status.mobile {
+  font-size: 11px;
+}
+
+/* 片段容器 */
+.track-clips {
+  flex: 1;
+  position: relative;
+  margin-left: 120px;
+  min-height: 100%;
+}
+
+.track-clips.mobile {
+  margin-left: 100px;
+}
+
+/* 响应式轨道头部 */
+@media (max-width: 768px) {
+  .track-header.mobile {
+    width: 80px;
+  }
+
+  .track-clips.mobile {
+    margin-left: 80px;
+  }
+
+  .track-name.mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .track-header.mobile {
+    width: 60px;
+    padding: 0 4px;
+  }
+
+  .track-clips.mobile {
+    margin-left: 60px;
+  }
+
+  .track-icon.mobile {
+    margin-right: 2px;
+  }
+}

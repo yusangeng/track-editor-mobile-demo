@@ -1,0 +1,215 @@
+/* 工具栏组件 */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #2d2d2d;
+  border-bottom: 1px solid #404040;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.toolbar.mobile {
+  padding: 6px 10px;
+  min-height: 50px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* 播放控制区域 */
+.playback-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  order: 1;
+}
+
+.play-button {
+  background: #4CAF50;
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.play-button.mobile {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  min-width: 40px;
+}
+
+.play-button:hover {
+  background: #45a049;
+}
+
+.play-button:active {
+  transform: scale(0.95);
+  background: #45a049;
+}
+
+.play-button:disabled {
+  background: #666666;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.time-display {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  font-size: 12px;
+  color: #cccccc;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.time-display.mobile {
+  font-size: 13px;
+}
+
+.time-display .current-time {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.time-display .divider {
+  color: #888888;
+  margin: 0 2px;
+}
+
+.time-display .total-time {
+  color: #aaaaaa;
+}
+
+/* 缩放控制区域 */
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  order: 2;
+}
+
+.zoom-button {
+  background: #404040;
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.2s;
+  touch-action: manipulation;
+  user-select: none;
+  min-width: 32px;
+}
+
+.zoom-button.mobile {
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+}
+
+.zoom-button:hover {
+  background: #505050;
+}
+
+.zoom-button:active {
+  transform: scale(0.95);
+  background: #505050;
+}
+
+.zoom-button:disabled {
+  background: #2a2a2a;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.zoom-level {
+  font-size: 11px;
+  color: #cccccc;
+  min-width: 40px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* 快捷键提示 */
+.shortcuts-hint {
+  display: none;
+  font-size: 10px;
+  color: #888888;
+  order: 3;
+  width: 100%;
+  justify-content: center;
+  gap: 16px;
+}
+
+.shortcuts-hint.mobile {
+  display: flex;
+}
+
+.shortcut {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .toolbar.mobile {
+    padding: 4px 8px;
+  }
+
+  .playback-controls {
+    gap: 8px;
+  }
+
+  .zoom-controls {
+    gap: 6px;
+  }
+
+  .shortcuts-hint.mobile {
+    font-size: 9px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toolbar.mobile {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+
+  .playback-controls {
+    justify-content: center;
+    order: 1;
+  }
+
+  .zoom-controls {
+    justify-content: center;
+    order: 2;
+  }
+
+  .shortcuts-hint.mobile {
+    order: 3;
+    font-size: 8px;
+    gap: 8px;
+  }
+
+  .shortcut {
+    padding: 1px 4px;
+  }
+}
