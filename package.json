@@ -1,0 +1,43 @@
+{
+  "name": "track-editor",
+  "version": "1.0.0",
+  "description": "视频音频轨道编辑器 - 类似专业视频剪辑工具的时间线编辑器",
+  "main": "App.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "keywords": [
+    "video-editor",
+    "audio-editor",
+    "timeline",
+    "track-editor",
+    "react",
+    "multimedia"
+  ],
+  "author": "Track Editor Team",
+  "license": "MIT"
+}
